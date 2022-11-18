@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../controller/image/collection_controller.dart';
-import '../../../controller/image/like_controller.dart';
 import '../user/widget/profile_widget.dart';
 import '../image/widget/image_list.dart';
 
@@ -75,7 +74,7 @@ class _HomePageState extends State<HomePage> {
             ),
             fillColor: Colors.grey.withOpacity(0.15),
             filled: true,
-            hintText: 'Search for amazing content',
+            hintText: 'Search',
             hintStyle: const TextStyle(color: Colors.black26),
             prefixIcon: const Icon(
               Icons.search_rounded,
