@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../controller/image/collection_controller.dart';
-import '../../../../controller/image/like_controller.dart';
 import '../../../../data/image/image.dart';
 
 class ImageCardWidget extends StatelessWidget {
@@ -44,33 +43,35 @@ class ImageCardWidget extends StatelessWidget {
         children: [
           Row(
             children: [
-              Consumer<LikeController>(
+              Consumer<CollectionController>(
                 builder: (context, value, child) {
                   return Padding(
                     padding: const EdgeInsets.only(left: 10.0),
-                    child: IconButton(
+                    child: 
+                    IconButton(
                       onPressed: () {
-                        value.isMarked(myImage)
-                            ? value.remove(myImage)
-                            : value.add(myImage);
+                        value.isTanda(myImage)
+                            ? value.hapus(myImage)
+                            : value.tambah(myImage);
                       },
                       icon: Icon(
-                        value.isMarked(myImage)
-                            ? Icons.emoji_emotions_outlined
-                            : Icons.emoji_emotions,
-                        color: value.isMarked(myImage)
-                            ? Colors.teal
-                            : Colors.pink,
+                        value.isTanda(myImage)
+                            ? Icons.emoji_emotions_rounded
+                            : Icons.emoji_emotions_outlined,
+                        color: value.isTanda(myImage)
+                            ? Color.fromARGB(255, 17, 17, 17)
+                            : Color.fromARGB(255, 48, 50, 50),
                       ),
                     ),
                   );
-                }
+                },
               ),
               Consumer<CollectionController>(
                 builder: (context, value, child) {
                   return Padding(
                     padding: const EdgeInsets.only(left: 10.0),
-                    child: IconButton(
+                    child: 
+                    IconButton(
                       onPressed: () {
                         value.isMarked(myImage)
                             ? value.remove(myImage)
@@ -81,7 +82,7 @@ class ImageCardWidget extends StatelessWidget {
                             ? Icons.bookmark
                             : Icons.bookmark_outline_rounded,
                         color: value.isMarked(myImage)
-                            ? Colors.teal
+                            ? Color.fromARGB(255, 0, 14, 13)
                             : Colors.grey.shade800,
                       ),
                     ),

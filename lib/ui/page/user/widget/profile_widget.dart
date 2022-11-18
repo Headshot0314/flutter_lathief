@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../controller/image/collection_controller.dart';
-import '../../../../controller/image/like_controller.dart';
+
 
 class ProfileWidget extends StatefulWidget {
   const ProfileWidget({Key? key}) : super(key: key);
@@ -55,13 +55,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
             },
           ),
           const Divider(),
-          Consumer<LikeController>(
+          Consumer<CollectionController>(
             builder: (context, value, child) {
               return listTile('My Likes (${value.myLike.length})',
                   Icons.emoji_emotions_outlined);
             },
           ),
-            
           const Divider(),
           listTile('Logout', Icons.logout, color: Colors.red),
         ],
@@ -92,4 +91,5 @@ class _ProfileWidgetState extends State<ProfileWidget> {
       ),
     );
   }
+  
 }
