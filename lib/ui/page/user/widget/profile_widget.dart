@@ -23,45 +23,42 @@ class _ProfileWidgetState extends State<ProfileWidget> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-              width: 100,
-              height: 100,
+              width: 60,
+              height: 60,
               child: CircleAvatar(
                   backgroundColor: Colors.grey.shade200,
                   backgroundImage: const NetworkImage(
                     'https://source.unsplash.com/random/200x200?men+portrait',
                   ))),
           const Padding(
-              padding: EdgeInsets.only(top: 20.0, bottom: 6.0),
+              padding: EdgeInsets.only(top: 12.0, bottom: 6.0),
               child: Text(
                 'John Dhoe',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
               )),
           Text(
             'Graphic Designer',
             style: TextStyle(
                 fontWeight: FontWeight.w500,
-                fontSize: 14,
+                fontSize: 6,
                 color: Colors.grey.shade500),
           ),
           const SizedBox(
-            height: 30,
+            height: 10,
           ),
           listTile('My Membership', Icons.star_border_outlined),
-          const Divider(),
           Consumer<CollectionController>(
             builder: (context, value, child) {
               return listTile('My Collection (${value.myCollection.length})',
                   Icons.bookmark_outline);
             },
           ),
-          const Divider(),
           Consumer<CollectionController>(
             builder: (context, value, child) {
               return listTile('My Likes (${value.myLike.length})',
                   Icons.emoji_emotions_outlined);
             },
           ),
-          const Divider(),
           listTile('Logout', Icons.logout, color: Colors.red),
         ],
       ),
@@ -75,8 +72,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
   }) {
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(
-        vertical: 8,
-        horizontal: 14,
+        vertical: 2,
+        horizontal: 3,
       ),
       leading: Icon(
         icon,
@@ -87,6 +84,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
         style: TextStyle(
           color: color,
           fontWeight: FontWeight.w500,
+          fontSize: 10,
         ),
       ),
     );
