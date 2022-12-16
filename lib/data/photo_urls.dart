@@ -14,7 +14,12 @@ class Urls{
   });
 
   static fromJson(Map<Urls, dynamic> json){
-    raw = json['raw'];
+   
+  }
+
+  Map<String, dynamic>toJson(){
+    final Map<String, dynamic> data = <String, dynamic>{};
+    return data;
   }
   
 }

@@ -1,4 +1,5 @@
 
+import 'photo_profile.dart';
 import 'photo_urls.dart';
 
 class Photo{
